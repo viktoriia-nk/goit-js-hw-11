@@ -16,6 +16,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 const API_KEY = '15830616-6bbce06063c91bd81d8a555c0';
 let page = 1;
  let q = ''   
+ let simpleLightBox;
 
 const fetchPhotos = async (q, page) =>{
         const response = await axios.get(`?key=${API_KEY}&q=${q}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`)
@@ -79,7 +80,7 @@ const submitForm = (event)=>{
             Notiflix.Notify.warning('Sorry, there are no images matching your search query. Please try again.')
         }
         renderGallery(data.hits)
-        simpleLightBox = new SimpleLightbox('.gallery a').refresh();
+         simpleLightBox = new SimpleLightbox('.gallery a').refresh();
 
         
         if(data.totalHits< 40 ){
