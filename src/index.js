@@ -15,7 +15,7 @@ btnLoadMore.classList.add('is-hidden')
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 const API_KEY = '15830616-6bbce06063c91bd81d8a555c0';
 let page = 1;
-    
+ let q = ''   
 
 const fetchPhotos = async (q, page) =>{
         const response = await axios.get(`?key=${API_KEY}&q=${q}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`)
